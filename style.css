@@ -1,0 +1,189 @@
+/* Import Google font*/
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+/* Variables */
+:root {
+  --font: 'Kumbh Sans', sans-serif;
+  --very-dark-blue: hsl(238, 29%, 16%);
+  --soft-red: hsl(14, 88%, 65%);
+  --soft-violet: hsl(273, 75%, 66%);
+  --soft-blue: hsl(240, 73%, 65%);
+  --very-dark-grayish: hsl(237, 12%, 33%);
+  --dark-grayish: hsl(240, 6%, 50%);
+  --light-grayish: hsl(240, 5%, 91%);
+}
+
+/* General */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+html {
+  font-size: 12px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 110vh;
+  overflow: hidden;
+  font-family: var(--font);
+  padding: 2rem 0;
+}
+
+body {
+  background: rgb(175,103,233);
+  background: linear-gradient(180deg, rgba(175,103,233,1) 35%, rgba(101,101,231,1) 100%);
+}
+
+/* Card */
+
+.card {
+  background-color: white;
+  border-radius: 20px;
+  width: 325px;
+  max-width: 325px;
+  padding: 2rem;
+  padding-bottom: 4rem;
+  margin-top: 9rem;
+  box-shadow: 0px 50px 81px -30px rgba(0,0,0,0.75);
+}
+
+h1 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+
+/* Card illustration */
+
+.card__illustration-container {
+  height: 20rem;
+  background-image: url("./images/bg-pattern-mobile.svg");
+  background-position: 0 82%;
+  background-repeat: no-repeat;
+  margin: -11.5rem 1.5rem 0rem 1.5rem;
+}
+
+/* Buttons */
+
+button {
+  all: initial;
+  font-family: var(--font);  
+  color: var(--dark-grayish);
+  font-size: 13px;
+  position: relative;
+  width: 100%;
+}
+
+button:hover {
+  color: var(--soft-red);
+  cursor: pointer;
+}
+
+
+.accordion__icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  right: 0;
+  transition: transform .2s ease-in-out
+}
+
+/* Accordion */
+
+.accordion__group {
+  border-bottom: 1px solid var(--light-grayish); 
+  padding: 1.2rem 0;
+}
+
+.accordion-panel {
+  padding-right: 1rem;
+  padding-top: 1rem;
+}
+
+/* Titles */
+
+.title__strong {
+  font-weight: 700;
+  color: var(--very-dark-grayish);
+}
+
+
+/* MEDIA QUERIES */
+
+@media only screen and (min-width: 1440px) {
+@keyframes slidein {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+}
+
+ main {
+   margin-top: -7.5rem;
+ }
+ /* Card */
+ .card {
+   width: 912px;
+   max-width: 912px;
+   min-height: 42.5rem;
+   display: flex;
+   position: relative;
+   padding: 0;
+   padding-top: 6rem;
+   background-image: url("./images/bg-pattern-desktop.svg");
+   background-repeat: no-repeat;
+   background-position-x: -55em;
+   background-position-y: -25em;
+ }
+ /* Illustration */
+ .card__illustration-container {
+   display: none;
+ }
+
+.card__illustration-desktop {
+    width: 33rem;
+    background-image: url('./images/illustration-woman-online-desktop.svg');
+    background-repeat: no-repeat;
+    z-index: 2;
+    background-position-x: -7rem;
+  }
+
+.card__illustration-box {
+    width: 16rem; 
+    height: 16rem;
+    background-image: url('./images/illustration-box-desktop.svg');
+    background-size: contain;
+    background-position: center;
+    position: absolute;
+    z-index: 3;
+    top: 17em;
+    left: -7.5rem;
+    animation: slidein 0.4s ease;
+  }
+
+ /* Accordion */
+  .accordion {
+    margin-left: 6.5rem;
+    width: 28rem;
+  }
+
+  .accordion > h1 {
+    text-align: left;
+  }
+
+}
